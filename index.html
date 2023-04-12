@@ -5,10 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Namaste React</title>
+    <link rel="stylesheet" href="./index.css">
   </head>
   <body>
-    <div id="root">
-      <h1>Namaste Everyone!</h1>
-    </div>
-  </body>
+    <!-- <div><h1>Header</h1></div> -->
+    <div id="root">Not Rendered</div>
+    <!-- <div><h1>Footer</h1></div> -->
+    <!-- In the above code, I used root, which has reacr code embeded in it, just to show that it can work
+    this way too, when we inject react code only in few portion of our code -->
+  
+  <!-- <script>
+    // this script is part of creating an h1 element with javascript
+
+    const heading = document.createElement("h1");
+
+    heading.innerHTML = "Namaste Everyone from Javascript!";
+
+    const root = document.getElementById("root");
+
+    root.appendChild(heading);
+  </script> -->
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+<script src="./App.js" ></script>
+</body>
 </html>
