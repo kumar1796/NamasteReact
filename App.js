@@ -1,37 +1,33 @@
-/*
-* HMR- Hot Module Replacement
-* File Watcher Algorithm
-* Budling
-* Minify
-* Cleaning our code
-* Dev and Production Build
-* Super Fast build algorithm
-* Image optimization
-* Caching while Development
-* Compression
-* Compatible with older version of browser
-* HTTPS on dev npx parcel index.html --https
-* Port Number
-* Consistent Hashing 
-* Zero Config
-* Browserslist -- https://www.npmjs.com/package/browserslist,  https://browserslist.dev/
-*
-*
-*
-* Transitive Dependencies- we have our pacakge manager which handles and takes care of our transitive dependencies our code 
-*/
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+// this is a react element
+const heading = (
+  <h1 id="title" key="h2">
+    Namaste React
+  </h1>
+);
 
-// const heading = React.createElement("h1", {id: "title"}, "Heading 1");
-const heading1 = React.createElement("h1", { id: "title" }, "Heading 1");
-const heading2 = React.createElement("h2", { id: "title" }, "Heading2");
-const container = React.createElement("div", { id: "container" }, [
-  heading1,
-  heading2,
-]);
-// console.log(heading); //React Element is just an object in the end
+const Title = () => (
+  <h1 id="title" key="h2">
+    Namaste Component
+  </h1>
+);
+
+// this is a react component
+const HeaderComponent = () => {
+  return (
+    <div>
+      {heading}
+      {Title()}
+      <Title />
+      <h1>Namaste React Component</h1>
+      <h2>This is a h2 tag</h2>
+    </div>
+  );
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(heading);
-root.render(container);
+
+// root.render(heading);  //rendering a react element
+root.render(<HeaderComponent />); //rendering a react component
