@@ -6,7 +6,6 @@ function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
     restaurant.data.name.includes(searchText)
   );
-  console.log("data is", filterData);
   return filterData;
 }
 
