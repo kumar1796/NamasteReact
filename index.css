@@ -10,27 +10,38 @@
   display: flex;
 }
 
-.nav-items > ul >li{
-    padding: 10px;
+.nav-items > ul > li {
+  padding: 10px;
 }
 
-.logo{
+.logo {
   width: 100px;
   height: 100px;
 }
 
-.card{
+.card {
   width: 200px;
   border: 1px solid black;
   padding: 10px;
   margin: 10px;
 }
 
-.card> img{
+.card > img {
   width: 100%;
 }
 
-.restaurant-list{
+.restaurant-list {
   display: flex;
   flex-wrap: wrap;
+}
+
+.shimmer-card {
+  width: 200px;
+  height: 200px;
+  background: lightgrey;
+  margin: 20px;
+}
+
+.menu {
+  display: flex;
 }
