@@ -8,6 +8,8 @@ import About from "./components/About";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
+import ProfileFunctionalComponent from "./components/Profile";
+import Profile from "./components/ProfileClass";
 
 const AppLayout = () => {
   return (
@@ -32,6 +34,16 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+        children: [
+          {
+            path: "profile",
+            element: <ProfileFunctionalComponent name={"Dino"} />,
+          },
+          {
+            path: "profile-class",
+            element: <Profile name={"DinoClass"} xyz="xyz" />,
+          },
+        ],
       },
       {
         path: "/contact",

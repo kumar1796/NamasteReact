@@ -29,8 +29,14 @@ const Body = () => {
     const json = await data.json();
 
     //optional chaining
-    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    // setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    // setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    setAllRestaurants(json?.data?.cards[2]?.card?.card?.gridElements.infoWithStyle.restaurants);
+    setFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements.infoWithStyle.restaurants);
+    console.log(
+      "ress-->",
+      json?.data?.cards[2]?.card?.card?.gridElements.infoWithStyle.restaurants
+    );
   }
 
   //  Conditional Rendering
@@ -74,10 +80,10 @@ const Body = () => {
         {filteredRestaurants.map((restaurant) => {
           return (
             <Link
-              to={"/restaurant/" + restaurant.data.id}
-              key={restaurant.data.id}
+              to={"/restaurant/" + restaurant.info.id}
+              key={restaurant.info.id}
             >
-              <RestaurantCard {...restaurant.data} />{" "}
+              <RestaurantCard {...restaurant.info} />
             </Link>
           );
         })}
