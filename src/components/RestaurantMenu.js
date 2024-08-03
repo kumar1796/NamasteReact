@@ -15,6 +15,8 @@ const RestaurantMenu = () => {
 
   const restaurant = useRestaurant(resId);
 
+  console.log("restaurant====", restaurant);
+
   return !restaurant ? (
     <Shimmer />
   ) : (

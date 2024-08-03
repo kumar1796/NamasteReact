@@ -26,11 +26,20 @@ const Body = () => {
     //optional chaining
     // setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     // setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    setAllRestaurants(json?.data?.cards[2]?.card?.card?.gridElements.infoWithStyle.restaurants);
-    setFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements.infoWithStyle.restaurants);
+    setAllRestaurants(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRestaurants(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    console.log("info-->", json?.data?.cards[2]?.card?.card?.gridElements);
     console.log(
       "ress-->",
-      json?.data?.cards[2]?.card?.card?.gridElements.infoWithStyle.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    console.log(
+      "new list=====",
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   }
 
@@ -53,10 +62,10 @@ const Body = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="search-container">
+      <div className="search-container p-5 bg-pink-50 my-5">
         <input
           type="text"
-          className="search-input"
+          className="focus:bg-green-200 p-2 m-2"
           placeholder="Search"
           value={searchText}
           onChange={(e) => {
@@ -64,10 +73,9 @@ const Body = () => {
           }}
         />
         <button
-          className="search-btn"
+          className="search-btn p-2 m-2 bg-purple-900 hover:bg-gray-500 text-white rounded-md"
           onClick={() => {
             //need to filter the data
-
             const data = filterData(searchText, allRestaurants);
             //update the state - restaurants
             setFilteredRestaurants(data);
@@ -76,7 +84,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="restaurant-list">
+      <div className="flex flex-wrap">
         {/* You have to write logic for NO restaurant found here */}
         {filteredRestaurants.map((restaurant) => {
           return (
